@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="text-center mt-5">Log in</h1>
+  <br>
+
+  <div class="row flex justify-content-center">
+    <div class="col-lg-6">
+      <div class="card card-body mb-3">
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
+          </div>
+        
+          <div class="field">
+            <%= f.label :password %><br />
+            <%= f.password_field :password, autocomplete: "current-password", :class => "form-control" %>
+          </div>
+          
+          <%= f.submit "Log in", :class => "btn btn-primary btn-block btn-lg mt-4 " %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

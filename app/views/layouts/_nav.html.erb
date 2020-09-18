@@ -1,0 +1,30 @@
+<header class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white border-bottom-light">
+    <div class="container-fluid">
+        
+        <%= link_to root_path, :style=> 'color:;' do %>
+            <h2>Holinet Education</h2>
+        <%end%>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+        
+            <% if user_signed_in? %>
+            
+            <%end%>
+
+            <ul class="navbar-nav ml-auto"> 
+                <% if ! user_signed_in? %>       
+                    <li class="nav-item"><a class="nav-link" href="/users/sign_up">Sign Up</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/users/sign_in">Login</a></li>
+                <%else%>
+                    <li class="nav-item">
+                        <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "nav-link") %>        
+                    </li>
+                <%end%>
+            </ul>
+        </div>  
+    </div>
+</header>
