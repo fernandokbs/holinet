@@ -1,19 +1,28 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>String:</strong>
-  <%= @course.string %>
-</p>
+<h1 class="text-center mb-4">Información del curso </h1>
 
-<p>
-  <strong>User:</strong>
-  <%= @course.user_id %>
-</p>
+<div class="row justify-content-center">
+  <div class="col-sm-8">
+    <div class="card">
+      <div class="card-body">
+          <div class="header">  
+              <%= @course.name %>
+          </div>
+             <p>
+              <strong>Maestro:</strong>
+              <%= @course.user.name %>
+            </p>
+            <p>
+              <strong>Descripción general del curso:</strong>
+              <%= @course.description %>
+            </p>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Text:</strong>
-  <%= @course.text %>
-</p>
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<div class="btn-group text-right">
+  <%= link_to 'Edit', edit_course_path(@course), class: "btn" %>
+  <%= link_to 'Back', courses_path, class: "btn" %>
+</div>

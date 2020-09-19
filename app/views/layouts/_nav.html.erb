@@ -12,7 +12,11 @@
         <div class="collapse navbar-collapse" id="navbarContent">
         
             <% if user_signed_in? %>
-            
+                <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= courses_path %>">Cursos</a>
+                    </li>
+                </ul>
             <%end%>
 
             <ul class="navbar-nav ml-auto"> 

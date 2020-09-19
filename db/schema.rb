@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_09_18_180234) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.integer "role", default: 0, null: false
+    t.string "matricula", default: ""
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
