@@ -24,12 +24,12 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<%= courses_path %>">Estudiantes</a>
+                        <a class="nav-link" href="<%= students_path %>">Estudiantes</a>
                     </li>
 
                     <% if current_user.admin? %>
                         <li class="nav-item">
-                            <a class="nav-link" href="<%= courses_path %>">Maestros</a>
+                            <a class="nav-link" href="<%= teachers_path %>">Maestros</a>
                         </li>
                     <%end%>
                 </ul>
