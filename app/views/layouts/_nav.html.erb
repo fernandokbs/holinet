@@ -1,14 +1,15 @@
 <header class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white border-bottom-light">
     <div class="container-fluid">
-        
-       
+        <%= link_to root_path, :style=> 'color:;' do %>
+            <h2>Holinet Education</h2>
+        <%end%>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarContent">
-        
+            <% if custom_signed_in? %>
                 <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                     <li class="nav-item">
                         <a class="nav-link" href="<%= courses_path %>">Cursos</a>
@@ -19,11 +20,7 @@
                     </li>
 
                 </ul>
-
-
-            <ul class="navbar-nav ml-auto"> 
-                 
-            </ul>
+            <%end%>
         </div>  
     </div>
 </header>
