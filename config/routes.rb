@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :courses
+  resources :users
   devise_for :users
 
   resource :home, only: [:index]
