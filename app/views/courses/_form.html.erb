@@ -22,7 +22,7 @@
 
           <div class="field">
             <%= form.label :maestro %>
-            <%= form.select :user_id, User.teacher.collect {|u| [u.name, u.id]}, {}, {:class =>  "form-control"} %>
+            <%= form.select :user_id, Teacher.all.collect {|u| [u.name, u.id]}, {}, {:class =>  "form-control"} %>
           </div>
 
           <div class="field">
