@@ -18,7 +18,10 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<%= students_path %>">Estudiantes</a>
                     </li>
+                </ul>
 
+                <ul class="navbar-nav ml-auto"> 
+                    <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "nav-link") %>        
                 </ul>
             <%end%>
         </div>  
