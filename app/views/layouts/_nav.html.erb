@@ -1,8 +1,14 @@
 <header class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white border-bottom-light">
     <div class="container-fluid">
         
-        <%= link_to root_path, :style=> 'color:;' do %>
-            <h2>Holinet Education</h2>
+        <% if user_signed_in? %>
+            <%= link_to my_home, :style=> 'color:;' do %>
+                <h2>Holinet Education</h2>
+            <%end%>
+        <%else%>
+            <%= link_to root_path, :style=> 'color:;' do %>
+                <h2>Holinet Education</h2>
+            <%end%>
         <%end%>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,9 +24,16 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<%= users_path %>">Usuarios</a>
+                        <a class="nav-link" href="<%= courses_path %>">Estudiantes</a>
                     </li>
+
+                    <% if current_user.admin? %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<%= courses_path %>">Maestros</a>
+                        </li>
+                    <%end%>
                 </ul>
+
             <%end%>
 
             <ul class="navbar-nav ml-auto"> 

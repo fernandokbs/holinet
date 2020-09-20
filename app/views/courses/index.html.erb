@@ -2,34 +2,4 @@
 
 <h1 class="text-center mb-5">Cursos actuales</h1>
 
-<div class="row justify-content-center mt-5">
-  <div class="col-sm-7">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nombre curso</th>
-          <th>Maestro</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @courses.each do |course| %>
-          <tr>
-            <td><%= course.name %></td>
-            <td><%= course.user.name %></td>
-            <div class="btn-group" role="group" aria-label="Basic example">
-              <td><%= link_to 'Mostrar', course %></td>
-              <td><%= link_to 'Editar', edit_course_path(course) %></td>
-              <td><%= link_to 'Eliminar', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </div>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<br>
-<div class="text-right white-text">
-  <%= link_to 'Crear curso', new_course_path, class: "btn btn-primary text-white" %>
-</div>
+<%= render 'courses', course: @courses %>
