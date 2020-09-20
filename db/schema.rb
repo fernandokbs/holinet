@@ -23,9 +23,7 @@ ActiveRecord::Schema.define(version: 2020_09_20_164310) do
 
   create_table "students", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
-    t.string "email"
     t.string "matricula"
-    t.string "password"
     t.integer "role", default: 1, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -34,7 +32,6 @@ ActiveRecord::Schema.define(version: 2020_09_20_164310) do
   create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "matricula"
-    t.string "mail"
     t.integer "role", default: 2, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
