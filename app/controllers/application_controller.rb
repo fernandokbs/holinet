@@ -19,11 +19,10 @@ class ApplicationController < ActionController::Base
         if user.student?
             path = home_students_url
         elsif user.teacher?
-            raise "Admmin"
+            path = home_teachers_url
         elsif user.admin?
             path = home_url
         end
-
         path
     end
 

@@ -10,6 +10,7 @@
 
         <div class="collapse navbar-collapse" id="navbarContent">
             <% if custom_signed_in? %>
+                <% if custom_signed_in?.admin? %>
                 <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                     <li class="nav-item">
                         <a class="nav-link" href="<%= courses_path %>">Cursos</a>
@@ -23,6 +24,15 @@
                         <a class="nav-link" href="<%= teachers_path %>">Maestros</a>
                     </li>
                 </ul>
+                <%elsif custom_signed_in?.teacher? %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= courses_path %>">Cursos</a>
+                    </li>
+                <%elsif custom_signed_in?.student? %>
+                    <li class="nav-item">
+                        <a class="nav-link">Mis cursos</a>
+                    </li>
+                <%end%>
 
                 <ul class="navbar-nav ml-auto"> 
                     <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "nav-link") %>        
