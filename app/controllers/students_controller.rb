@@ -1,6 +1,5 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
 
   # GET /students
   # GET /students.json
@@ -60,6 +59,10 @@ class StudentsController < ApplicationController
       format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def home
+    
   end
 
   private

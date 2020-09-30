@@ -11,10 +11,15 @@ Rails.application.routes.draw do
     sessions: 'teachers/sessions'
   }
 
-  resources :teachers
-  resources :students
-  resources :courses
+  resources :teachers do 
+    get :home, on: :collection
+  end
 
-  resource :home, only: [:index]
+  resources :students do 
+    get :home, on: :collection
+  end
+
+  resources :courses
+  get '/main', to: 'main#home', as: 'home'
   root to: 'main#main'
 end

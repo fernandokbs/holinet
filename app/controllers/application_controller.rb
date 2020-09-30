@@ -13,6 +13,30 @@ class ApplicationController < ActionController::Base
 
 
     def after_sign_in_path_for(resource)
-        root_path
+        user = custom_signed_in?
+        path = root_path
+
+        if user.student?
+            path = home_students_url
+        elsif user.teacher?
+            raise "Admmin"
+        elsif user.admin?
+            path = home_url
+        end
+
+        path
+    end
+
+    private
+
+    def custom_signed_in?
+        if !current_user.nil?
+            user = current_user
+        elsif !current_student.nil?
+            user = current_student
+        else
+            user = current_teacher
+        end
+        user
     end
 end
