@@ -1,16 +1,8 @@
-default: &default
+development:
   adapter: mysql2
-  encoding: utf8mb4
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  encoding: utf8
+  database: holinet_education
   username: root
   password: 
-
-development:
-  <<: *default
-  database: holinet
-  host: localhost
-
-test:
-  <<: *default
-  database: rails6_mysql_test
-  host: <%= ENV['MYSQL_ADDRESS'] %>
+  host: 127.0.0.1
+  port: 3306
