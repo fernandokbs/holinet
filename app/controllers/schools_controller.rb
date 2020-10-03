@@ -70,6 +70,6 @@ class SchoolsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def school_params
-      params.fetch(:school, {})
+      params.require(:school).permit(:name, :email, :matricula, :role, :password)
     end
 end

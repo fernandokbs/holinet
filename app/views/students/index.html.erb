@@ -20,9 +20,9 @@
             <td><%= student.name %></td>
             <td><%= student.email %></td>
             <td><%= student.matricula %></td>
-            <td><%= link_to 'Show', student %></td>
-            <td><%= link_to 'Edit', edit_student_path(student) %></td>
-            <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Mostrar', student %></td>
+            <td><%= link_to 'Editar', edit_student_path(student) %></td>
+            <td><%= link_to 'Eliminar', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
