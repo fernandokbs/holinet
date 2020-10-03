@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :schools
+  
+  devise_for :schools, controllers: {
+    sessions: 'schools/sessions'
+  }
+
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }
@@ -11,6 +15,8 @@ Rails.application.routes.draw do
   devise_for :teachers, controllers: {
     sessions: 'teachers/sessions'
   }
+
+  resources :schools
 
   resources :teachers do 
     get :home, on: :collection
