@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     sessions: 'teachers/sessions'
   }
 
-  resources :schools
+  resources :schools do
+    get :home, on: :collection
+  end
 
   resources :teachers do 
     get :home, on: :collection
