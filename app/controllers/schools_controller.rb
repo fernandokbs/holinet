@@ -24,6 +24,7 @@ class SchoolsController < ApplicationController
   # POST /schools
   # POST /schools.json
   def create
+    raise "Error"
     @school = School.new(school_params)
 
     respond_to do |format|

@@ -22,6 +22,8 @@ class ApplicationController < ActionController::Base
             path = home_teachers_url
         elsif user.admin?
             path = home_url
+        elsif user.school?
+            path = school_url
         end
         path
     end
@@ -33,6 +35,8 @@ class ApplicationController < ActionController::Base
             user = current_user
         elsif !current_student.nil?
             user = current_student
+        elsif !current_schoold.nil?
+            user = current_schoold
         else
             user = current_teacher
         end
