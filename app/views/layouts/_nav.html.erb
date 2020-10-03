@@ -11,6 +11,18 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarContent">
+            <% if !current_user.nil? %>
+                <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= schools_path %>">Planteles</a>
+                    </li>
+                </ul>
+
+                <ul class="navbar-nav ml-auto"> 
+                    <%= link_to('Logout', destroy_user_session_path, method: :delete, :class => "nav-link") %>        
+                </ul>
+            <%end%>
+
             <% if !current_student.nil? %>
                 <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                     <li class="nav-item">
@@ -38,11 +50,11 @@
             <% if !current_school.nil? %>
                 <ul class="navbar-nav mr-auto mt-2 mt-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="<%= courses_path %>">Cursos</a>
+                        <a class="nav-link" href="<%= teachers_path %>">Maestros</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="<%= teachers_path %>">Maestros</a>
+                        <a class="nav-link" href="<%= students_path %>">Estudiantes</a>
                     </li>
                 </ul>
 

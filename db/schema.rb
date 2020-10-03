@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_09_30_223653) do
     t.string "name"
     t.string "matricula"
     t.integer "role", default: 1, null: false
+    t.bigint "school_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -48,12 +49,14 @@ ActiveRecord::Schema.define(version: 2020_09_30_223653) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
+    t.index ["school_id"], name: "index_students_on_school_id"
   end
 
   create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "matricula"
     t.integer "role", default: 2, null: false
+    t.bigint "school_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "email", default: "", null: false
@@ -63,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_09_30_223653) do
     t.datetime "remember_created_at"
     t.index ["email"], name: "index_teachers_on_email", unique: true
     t.index ["reset_password_token"], name: "index_teachers_on_reset_password_token", unique: true
+    t.index ["school_id"], name: "index_teachers_on_school_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,4 +84,6 @@ ActiveRecord::Schema.define(version: 2020_09_30_223653) do
   end
 
   add_foreign_key "courses", "teachers"
+  add_foreign_key "students", "schools"
+  add_foreign_key "teachers", "schools"
 end
