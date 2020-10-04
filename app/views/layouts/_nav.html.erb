@@ -1,9 +1,7 @@
 <header class="navbar navbar-expand-md navbar-toggleable-md navbar-light bg-white border-bottom-light" style="background-color: #F7F7F7 !important">
     <div class="container-fluid">
         <div class="text-right">
-            <%= link_to root_path  do %>
-                <h2>Holinet Education</h2>
-            <%end%>
+            <%= link_to image_tag("logos/logo.png", width: '180'), root_path  %>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +23,17 @@
 
             <% if !current_student.nil? %>
                 <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= home_students_path %>">Cursos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= home_students_path %>">Dudas</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<%= home_students_path %>">Comentarios</a>
+                    </li>
                 </ul>
 
                 <ul class="navbar-nav ml-auto"> 
