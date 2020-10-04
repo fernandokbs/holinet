@@ -62,7 +62,7 @@ class StudentsController < ApplicationController
   end
 
   def home
-    
+    @courses = Course.all
   end
 
   private

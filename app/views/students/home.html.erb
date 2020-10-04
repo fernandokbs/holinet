@@ -2,4 +2,19 @@
 
 <hr>
 
-<p class="text-center">Últimos cursos</p>
+<p class="text-center mb-4">Últimos cursos</p>
+
+<div class="row justify-content-center">
+    <% @courses.each do |course| %>
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= course.name %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= course.teacher.name %></h6>
+                    <p class="card-text"><%= course.description %></p>
+                    <%= link_to 'Ir al curso', course_path(course), :class => 'card-link'%>
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
