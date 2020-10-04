@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  get 'video/show'
   devise_for :schools, controllers: {
     sessions: 'schools/sessions'
   }
@@ -28,7 +29,12 @@ Rails.application.routes.draw do
     get :home, on: :collection
   end
 
-  resources :courses
+  resources :videos, only: [:show]
+  
+  resources :courses do 
+    get :videos, on: :member
+  end
+
   get '/main', to: 'main#home', as: 'home'
   root to: 'main#main'
 end

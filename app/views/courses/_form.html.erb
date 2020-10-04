@@ -25,6 +25,11 @@
             <%= form.text_area :description, class: "form-control" %>
           </div>
 
+          <div class="field">
+            <%= form.label :material %>
+            <%= form.file_field :videos, multiple: true,  class: "form-control" %>
+          </div>
+
           <div class="actions">
             <%= form.submit class: 'btn btn-success btn-block' %>
           </div>

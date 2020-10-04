@@ -19,6 +19,18 @@
             </p>
       </div>
     </div>
+
+    <div class="card">
+      <div class="card-body text-center">
+          <h3 class="text-center">Material del curso</h3>
+          <% if @course.videos %>
+            <% @course.videos.each do |video| %>
+                <%= video.id %> - <%= link_to video.filename, video_path(@course) %>
+                <br>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>
 

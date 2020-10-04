@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :set_course, only: [:show, :edit, :update, :destroy, :videos]
   # before_action :authenticate_user! 
 
   # GET /courses
@@ -62,6 +62,10 @@ class CoursesController < ApplicationController
     end
   end
 
+  def videos
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_course
@@ -70,6 +74,6 @@ class CoursesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def course_params
-      params.require(:course).permit(:name, :teacher, :description)
+      params.require(:course).permit(:name, :teacher, :description, videos: [])
     end
 end
