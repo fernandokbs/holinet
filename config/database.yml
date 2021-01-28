@@ -3,6 +3,6 @@ development:
   encoding: utf8
   database: holinet_education
   username: root
-  password: 
-  host: 127.0.0.1
+  password: example
+  host: db
   port: 3306
